@@ -1,0 +1,1073 @@
+/* --- Global Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* --- Placeholders for Images --- */
+.placeholder-bg {
+    background-color: #222;
+    border: 1px dashed #555;
+}
+.placeholder-img {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+/* --- Header & Navigation --- */
+header {
+    position: absolute; /* Floats over the hero image */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 10;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.site-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #aaa;
+}
+
+/* --- Hero Section & Native Video Background --- */
+.video-bg-section {
+    position: relative;
+    height: 80vh; /* Adjust banner height here */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    /* This centers the video and crops it perfectly to fit the screen */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* The 0.5 is the darkness of the tint. 0 = invisible, 1 = pitch black */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 2;
+}
+
+
+/* --- Features Section --- */
+.features {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faa-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.faa-badge {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.faa-text h2 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.faa-text p {
+    color: #ccc;
+    font-size: 0.9rem;
+    max-width: 600px;
+}
+
+/* Zig-Zag Rows */
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-col {
+    flex: 1;
+    text-align: center;
+}
+
+.text-col h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.text-col p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.img-col {
+    flex: 1;
+    height: 250px; /* Placeholder height */
+    border-radius: 4px;
+}
+
+/* --- Process Banner --- */
+.process-banner {
+    position: relative; /* This acts as the anchor for the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.banner-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* This automatically darkens the image by 60% so the white text is readable! */
+    filter: brightness(0.4); 
+}
+
+.banner-text {
+    position: absolute; /* This pulls the text off the page and floats it over the image */
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    z-index: 2; /* Ensures the text stays above the image */
+}
+
+.banner-text p {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.banner-text .small-text {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #ccc;
+}
+
+/* Mobile Adjustment to make the text slightly smaller on phones */
+@media (max-width: 600px) {
+    .banner-text p {
+        font-size: 0.9rem;
+    }
+}
+
+.small-text {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    color: #ccc;
+}
+
+.small-text {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    color: #aaa;
+}
+
+/* The Section Background */
+.process-steps {
+    background-color: #ffffff; /* Makes the entire section white */
+    padding: 80px 20px; /* Ensures there is white space above and below the cards */
+    
+    /* Keep your existing flexbox/grid layout rules here */
+    display: flex; 
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* The Individual Cards */
+.step-card {
+    background-color: #1a1a1a; /* Forces the card to stay dark charcoal/black */
+    color: #ffffff; /* Keeps the text white */
+    
+    /* Keep your existing card styling here */
+    padding: 30px;
+    border-radius: 8px;
+    width: 250px; 
+}
+
+.step-img {
+    height: 150px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.step-card h4 {
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.step-card p {
+    font-size: 0.85rem;
+    color: #aaa;
+    padding: 0 15px;
+}
+
+/* --- Contact Section (Updated) --- */
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.contact-section > p {
+    margin-bottom: 40px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.contact-btn:hover {
+    background: #555;
+}
+
+/* --- FAQ Section (Updated for Interactivity) --- */
+.faq-section {
+    background: #f4f4f4;
+    color: #000;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-section h3 {
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.faq-item {
+    width: 100%;
+    max-width: 600px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+/* The clickable question area */
+.faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    list-style: none; /* Hides the default browser triangle */
+    outline: none;
+    font-weight: 600;
+}
+
+/* Hides default triangle on Safari/Chrome */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The hidden text that appears when clicked */
+.faq-answer {
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Animates the + icon */
+.faq-icon {
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+/* Rotates the + into an x when the details panel is open */
+details[open] summary .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000;
+    padding: 60px 20px 20px 20px;
+    border-top: 1px solid #111; /* Adds a subtle line to separate it from the FAQ section */
+}
+
+.footer-top {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #888; /* Dims slightly when hovered */
+}
+
+.footer-domain {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-phone {
+    font-size: 0.8rem;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: flex-start; /* Aligns the copyright to the left */
+    padding-top: 20px;
+    border-top: 1px solid #222; /* Very subtle line above copyright */
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Adjustment: Center the copyright text on small screens */
+@media (max-width: 600px) {
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+
+/* --- Image Clamping Rules --- */
+
+/* 1. Global Image Safeguard */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 2. Header Logo */
+.logo-area img {
+    width: 350px; /* Adjust this to make your banner logo bigger/smaller */
+    height: auto;
+}
+
+/* 3. FAA Badge */
+.faa-block img {
+    width: 150px; /* Matches the size of the old placeholder */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 4. The Feature Row Images (House, Zoom, Thermal) */
+.feature-row img {
+    flex: 1;
+    width: 100%;
+    max-width: 50%; /* Forces the image to only take up half the row */
+    height: 300px; /* Locks the height of the box */
+    object-fit: cover; /* Acts like a window: fills the 300px box without squishing the image */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* Adds a subtle shadow to separate it from the dark background */
+}
+
+/* 5. Mobile Layout Fix (Stacks images under text on small screens) */
+@media (max-width: 800px) {
+    .feature-row, .feature-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .feature-row img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+/* =========================================
+   GALLERY PAGE STYLES
+========================================= */
+
+/* Give the gallery page a true black background */
+.gallery-page {
+    background-color: #000;
+}
+
+/* 1. Full Width 6-Image Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 0; /* No space between images, just like the screenshot */
+    width: 100%;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 3 / 2; /* Forces all images to be the exact same shape */
+    object-fit: cover; /* Prevents squishing */
+    display: block;
+}
+
+/* Mobile: Stack to 2 columns, then 1 */
+@media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+}
+
+/* Section Labels (VIDEO & INSTAGRAM) */
+.section-label {
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. Featured Video Section */
+.gallery-video-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.video-wrapper {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio trick */
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 3. Instagram Section */
+.gallery-insta-section {
+    padding: 20px 20px 80px 20px;
+    text-align: center;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Spacing between Insta posts */
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+}
+
+.insta-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Perfect squares */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.insta-grid img:hover {
+    opacity: 0.7; /* Nice fade effect when hovered */
+}
+
+/* Mobile: Stack Instagram to 2 columns */
+@media (max-width: 700px) {
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* The Links below the sections */
+.gallery-link {
+    display: inline-block;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.gallery-link:hover {
+    color: #fff;
+}
+
+
+/* =========================================
+   GALLERY PAGE SPECIFIC FIXES
+========================================= */
+
+/* 1. Make the header a solid black bar that pushes the images down */
+.gallery-page header {
+    position: relative; /* Stops the header from floating over the photos */
+    background-color: #000; /* Solid black background */
+    z-index: 10;
+}
+/* =========================================
+   BULLETPROOF FLUSH GALLERY GRID
+========================================= */
+.gallery-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #000;
+}
+/* =========================================
+   FULL-BLEED FLEXBOX (GAP DESTROYER)
+========================================= */
+/* Add this to stop the 100vw from causing horizontal scrolling on Windows */
+body {
+    overflow-x: hidden; 
+}
+/* =========================================
+   THE FLAWLESS GALLERY GRID
+========================================= */
+
+/* 1. Kill the invisible browser borders on the gallery page */
+body.gallery-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #000;
+}
+/* =========================================
+   THE LOCKED-DOWN GALLERY GRID
+========================================= */
+
+.gallery-grid {
+    display: grid !important;
+    
+    /* THE SAFETY LOCK: Forces giant images to obey the 3-column math */
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    
+    gap: 0 !important; 
+    width: 100% !important; 
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.gallery-grid img {
+    width: 100% !important;
+    height: 100% !important; 
+    aspect-ratio: 3 / 2 !important; 
+    object-fit: cover !important; 
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    transform: none !important; 
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 500px) {
+    .gallery-grid { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+
+/* Controls the overall size and shape of the video */
+.gallery-video-wrapper {
+    width: 100%;
+    
+    /* Change this number to make the video bigger or smaller! (e.g., 600px, 1000px) */
+    max-width: 1000px; 
+    
+    margin: 0 auto; /* Perfectly centers the video on the page */
+    
+    /* The Magic Trick: Forces a perfect YouTube rectangle */
+    aspect-ratio: 16 / 9; 
+}
+
+/* Tells the actual video player to fill that perfect rectangle */
+.gallery-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px; /* Optional: adds a slight premium rounding to the corners */
+}
+
+/* =========================================
+   EQUAL-HEIGHT CONTACT PAGE STYLES
+========================================= */
+
+body.contact-page {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-page header {
+    position: relative;
+    background-color: #000;
+    z-index: 10;
+}
+
+/* The Main Layout Grid */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    /* Aligns the top of both columns */
+    align-items: stretch; 
+}
+
+/* --- LEFT SIDE: Flexible Column --- */
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes image to absolute bottom */
+}
+
+.contact-headline {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.contact-subtext {
+    color: #999;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.direct-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* --- Restricted Button Styles (Only applies to the Contact Page) --- */
+.contact-page .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 25px;
+    font-size: 1.1rem;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.contact-page .contact-btn i {
+    color: #888;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.contact-page .contact-btn:hover {
+    background-color: #222;
+    border-color: #555;
+}
+
+.contact-page .contact-btn:hover i {
+    color: #fff;
+}
+
+/* Forces the image to lock to the bottom and fill horizontal space */
+.contact-image-wrapper {
+    width: 100%;
+    height: 280px; /* Adjust this to change image height */
+    overflow: hidden;
+}
+
+.contact-fill-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- RIGHT SIDE: Flexible Column --- */
+.contact-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.business-name {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.contact-right-header h3 {
+    font-size: 1.1rem;
+    color: #999;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* THE MAGIC TRICK: Auto-spreading the hours */
+.hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* This mathematically spaces the 7 days evenly to fill the exact height of the left column */
+    justify-content: space-between; 
+    flex-grow: 1; /* Tells the list to consume all remaining vertical space */
+}
+
+.hours-list li {
+    display: flex;
+    color: #888;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.hours-list li span {
+    width: 60px; 
+    display: inline-block;
+}
+
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr; 
+        gap: 60px;
+        padding: 60px 20px;
+    }
+    .hours-list {
+        /* Removes the vertical spreading on mobile so it stacks normally */
+        gap: 15px; 
+    }
+}
+
+
+/* =========================================
+   ABOUT PAGE STYLES
+========================================= */
+
+body.about-page {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Force Header to be solid black */
+.about-page header {
+    position: relative;
+    background-color: #000;
+    z-index: 10;
+}
+
+/* --- Section 1: The White Area --- */
+.about-hero-section {
+    background-color: #fff;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content-wrapper {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.about-label {
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Forces image to perfectly match the width of the box below it */
+.about-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* The dark text box sitting directly under the image */
+.about-text-box {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.about-text-box h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.about-text-box p {
+    font-size: 1rem;
+    color: #aaa; /* Soft gray for readability */
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* --- Section 2: Instagram Grid --- */
+.about-insta-section {
+    background-color: #000;
+    padding: 40px 20px 80px 20px;
+    text-align: center;
+}
+
+.about-label-dark {
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+}
+
+.insta-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Forces perfect squares */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.insta-grid img:hover {
+    opacity: 0.6;
+}
+
+.insta-link {
+    display: inline-block;
+    color: #666;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.insta-link:hover {
+    color: #fff;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+    .about-text-box {
+        padding: 40px 20px;
+    }
+    .insta-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+/* =========================================
+   MASTER MOBILE RESPONSIVENESS (PHONES & TABLETS)
+========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Header & Navigation */
+    header {
+        flex-direction: column; /* Stacks the logo on top of the links */
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8); /* Adds a slight dark background so text is readable over video */
+    }
+    
+    nav {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Allows links to drop to a second line if needed */
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    /* 2. Shrink the Hero Video */
+    .video-bg-section {
+        height: 50vh; /* Prevents the video from taking up the entire vertical phone screen */
+    }
+
+    /* 3. Reduce Massive Desktop Margins/Padding */
+    .features, 
+    .process-steps, 
+    .contact-section, 
+    .faq-section {
+        padding: 50px 15px; /* Shrinks the empty space above and below sections */
+    }
+    
+    .feature-row {
+        margin-bottom: 50px;
+    }
+
+    /* 4. Make the Process Cards Fluid */
+    .step-card {
+        width: 100%; /* Tells the card to expand to the edges of the phone */
+        max-width: 350px; /* Keeps them from getting too wide on tablets */
+    }
+
+    /* 5. Scale Down Massive Text */
+    .contact-headline {
+        font-size: 2rem !important; /* Shrinks the giant "Let's get your project off the ground" */
+    }
+    
+    .business-name {
+        font-size: 1.5rem !important;
+    }
+    
+    .faa-text h2 {
+        font-size: 1.5rem;
+    }
+
+    /* 6. Contact Page Tweaks */
+    .contact-container {
+        padding: 40px 20px !important;
+        gap: 40px !important;
+    }
+    
+    .contact-page .contact-btn {
+        font-size: 0.95rem !important;
+        padding: 15px 20px !important; /* Shrinks the massive email/phone buttons */
+    }
+    
+    /* 7. Footer Fixes */
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .footer-top {
+        margin-bottom: 30px;
+    }
+}
