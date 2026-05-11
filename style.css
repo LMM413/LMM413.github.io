@@ -239,33 +239,109 @@ nav a:hover {
     color: #aaa;
 }
 
-/* The Section Background */
-.process-steps {
-    background-color: #ffffff; /* Makes the entire section white */
-    padding: 80px 20px; /* Ensures there is white space above and below the cards */
-    
-    /* Keep your existing flexbox/grid layout rules here */
-    display: flex; 
+/* =========================================
+   NEW PROCESS TIMELINE SECTION
+========================================= */
+
+.process-section {
+    background-color: #ffffff; /* Keeps the white background for the section */
+    padding: 80px 20px;
+    display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
-/* The Individual Cards */
-.step-card {
-    background-color: #1a1a1a; /* Forces the card to stay dark charcoal/black */
-    color: #ffffff; /* Keeps the text white */
-    
-    /* Keep your existing card styling here */
-    padding: 30px;
-    border-radius: 8px;
-    width: 250px; 
-}
-
-.step-img {
-    height: 150px;
+.process-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Splits the card exactly 50/50 */
+    background-color: #1a1a1a; /* Matches your dark card theme */
+    max-width: 1100px;
     width: 100%;
-    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the image doesn't break out of the rounded corners */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* Adds a soft drop shadow over the white background */
+}
+
+.step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* The circular number badges */
+.step-number {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevents the circle from squishing if the text gets long */
+}
+
+.step-text h4 {
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.step-text p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- THE PERFECT SQUARE FLEXBOX FIX --- */
+/* --- THE BULLETPROOF GRID FIX --- */
+
+.process-container {
+    display: grid; /* Back to Grid! */
+    grid-template-columns: 55% 45%; /* Hard-locks the width so the text cannot be squished */
+    background-color: #1a1a1a; 
+    max-width: 1300px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); 
+}
+
+.process-steps-list {
+    padding: 40px 50px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px; 
+}
+
+.process-image-side {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.process-featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    
+    /* This safely anchors your Before/After text into the bottom left corner */
+    object-position: left bottom; 
+    display: block;
+}
+
+.process-featured-img {
+    height: 100%;
+    /* THE MAGIC TRICK: Forces the image width to perfectly match the card's height */
+    aspect-ratio: 1 / 1; 
+    
+    object-fit: cover; /* Since the box is now a square, this fills it with ZERO cropping */
+    object-position: center; 
+    display: block;
 }
 
 .step-card h4 {
@@ -990,7 +1066,6 @@ body.about-page {
     }
 }
 
-
 /* =========================================
    MASTER MOBILE RESPONSIVENESS (PHONES & TABLETS)
 ========================================= */
@@ -1069,5 +1144,37 @@ body.about-page {
     
     .footer-top {
         margin-bottom: 30px;
+    }
+}
+
+/* =========================================
+   MOBILE OVERRIDE: PROCESS SECTION
+========================================= */
+
+@media (max-width: 800px) {
+    .process-container {
+        /* Drops the grid and stacks the columns vertically */
+        display: flex; 
+        flex-direction: column; 
+    }
+    
+    .process-steps-list {
+        /* Shrinks the heavy desktop padding so it fits nicely on a phone screen */
+        padding: 30px 20px; 
+        gap: 20px; 
+    }
+    
+    .process-image-side {
+        width: 100%;
+        /* Gives the image box a fixed height so it doesn't vanish when stacked */
+        height: 350px; 
+    }
+
+    .process-featured-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        /* Keeps the text anchored in the corner even on the smaller mobile crop */
+        object-position: left bottom; 
     }
 }
